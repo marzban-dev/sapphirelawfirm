@@ -210,7 +210,9 @@
                 <div class="site-nav__primary">
                     <ul class="site-nav__list site-nav__list--primary" ref="nav">
                         <li class="site-nav__item">
-                            <a href="../lawyers.html" class="site-nav__link">Professionals</a>
+                            <a href="../careers/testimonials.html" class="site-nav__link"
+                                >Professionals</a
+                            >
                         </li>
                         <li class="site-nav__item">
                             <a href="../services.html" class="site-nav__link">Services</a>
@@ -227,15 +229,7 @@
 
                     <ul class="site-nav__list site-nav__list--secondary" ref="subnav">
                         <li class="site-nav__item">
-                            <a href="../insights.html" class="site-nav__link"
-                                >News &amp; Insights</a
-                            >
-                        </li>
-                        <li class="site-nav__item">
                             <a href="../offices.html" class="site-nav__link">Locations</a>
-                        </li>
-                        <li class="site-nav__item">
-                            <a href="../alumni-engagement.html" class="site-nav__link">Alumni</a>
                         </li>
                     </ul>
                 </div>
@@ -386,13 +380,9 @@
                                 href="bristolmyers-squibb-on-acquisition-of-celgene-2.html"
                                 class="showcase-panel__headline showcase-panel__headline--active"
                             >
-                                <div class="showcase-panel__category">
-                                    Mergers &amp; Acquisitions
-                                </div>
                                 <h1 class="showcase-panel__title">
                                     Services Make it as Bullet Points
                                 </h1>
-                                <time class="showcase-panel__date">03 January 2019</time>
                             </a>
                         </div>
                     </div>
@@ -405,15 +395,9 @@
 
                 <div class="showcase-marquee-story-mobile-headline">
                     <div class="showcase-marquee-story-mobile-headline__frame wrapper">
-                        <div class="showcase-marquee-story-mobile-headline__category">
-                            Mergers &amp; Acquisitions
-                        </div>
                         <h1 class="showcase-marquee-story-mobile-headline__title">
                             Services Make it as Bullet Points
                         </h1>
-                        <time class="showcase-marquee-story-mobile-headline__date"
-                            >03 January 2019</time
-                        >
                     </div>
                 </div>
 
@@ -938,132 +922,6 @@
                             </div>
                         </section>
 
-                        <div class="showcase-layout__dark-column">
-                            <div
-                                is="team-carousel"
-                                v-if="activeSlideContent.teamCarousel"
-                                v-bind:viewall-url="activeSlideContent.teamCarousel.viewallUrl"
-                                v-bind:card-items="activeSlideContent.teamCarousel.cardItems"
-                                inline-template
-                            >
-                                <section class="team-carousel">
-                                    <div class="wrapper team-carousel__body">
-                                        <div class="team-carousel__intro">
-                                            <header
-                                                class="titles__subheading titles__subheading--top"
-                                            >
-                                                <h2
-                                                    class="titles__subheading-title"
-                                                    v-html="activeSlideContent.teamCarousel.heading"
-                                                ></h2>
-                                            </header>
-                                            <a
-                                                v-bind:href="viewallUrl"
-                                                class="team-carousel__view-all"
-                                                >View <br />
-                                                All Bios</a
-                                            >
-                                        </div>
-
-                                        <div class="team-carousel__slides">
-                                            <div
-                                                class="team-carousel__belt"
-                                                v-bind:style="[beltStyles]"
-                                                ref="domBelt"
-                                            >
-                                                <team-card
-                                                    v-for="card in cardItems"
-                                                    :key="card.id"
-                                                    :card="card"
-                                                ></team-card>
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="team-carousel__controls"
-                                            v-if="displayCarouselArrows"
-                                        >
-                                            <button
-                                                v-on:click="nextSlide"
-                                                v-bind:class="{'team-carousel__arrow--disabled': endOfCarousel}"
-                                                class="team-carousel__arrow team-carousel__arrow--right icon-chevron-thin-right"
-                                                aria-label="Show Previous Slide"
-                                            ></button>
-                                            <button
-                                                v-on:click="previousSlide"
-                                                v-bind:class="{'team-carousel__arrow--disabled': startOfCarousel}"
-                                                class="team-carousel__arrow team-carousel__arrow--left icon-chevron-thin-left"
-                                                aria-label="Show Next Slide"
-                                            ></button>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-
-                            <script type="text/template" id="team-card">
-                                <a v-bind:href="card.url" class="team-card">
-                                    <figure class="team-card__figure">
-                                        <img v-if="card.imgUrl" class="team-card__img" v-bind:src="card.imgUrl" v-bind:alt="card.name" />
-                                        <div v-else class="team-card__img-placeholder"></div>
-                                    </figure>
-                                    <p class="team-card__info">
-                                        <span class="team-card__name" v-text="card.name"></span>
-                                        <span class="team-card__service" v-text="card.service"></span>
-                                    </p>
-                                </a>
-                            </script>
-
-                            <div
-                                is="showcase-quote"
-                                v-if="activeSlideContent.showcaseQuote"
-                                :quote-data="activeSlideContent.showcaseQuote"
-                                inline-template
-                            >
-                                <div>
-                                    <blockquote
-                                        class="showcase-quote wrapper showcase-quote--desktop"
-                                    >
-                                        <div class="showcase-quote__body">
-                                            <cite class="showcase-quote__cite">
-                                                <span
-                                                    class="showcase-quote__author"
-                                                    v-text="quoteData.author"
-                                                ></span>
-                                                <span
-                                                    class="showcase-quote__position"
-                                                    v-text="quoteData.position"
-                                                ></span>
-                                            </cite>
-                                            <div
-                                                class="showcase-quote__blockquote"
-                                                v-html="quoteData.quote"
-                                            ></div>
-                                        </div>
-                                    </blockquote>
-                                    <div class="showcase-quote--mobile">
-                                        <div class="showcase-quote showcase-quote--dark wrapper">
-                                            <div class="showcase-quote__body">
-                                                <div
-                                                    class="showcase-quote__blockquote"
-                                                    v-html="quoteData.quote"
-                                                ></div>
-                                                <cite class="showcase-quote__cite">
-                                                    <span
-                                                        class="showcase-quote__author"
-                                                        v-text="quoteData.author"
-                                                    ></span>
-                                                    <span
-                                                        class="showcase-quote__position"
-                                                        v-text="quoteData.position"
-                                                    ></span>
-                                                </cite>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="section--alternating-bg showcase-layout__white-section">
                             <div></div>
 
@@ -1583,7 +1441,7 @@
                                 </div>
                             </div>
 
-                            <div
+                            <!-- <div
                                 is="showcase-insights"
                                 v-if="activeSlideContent.relatedInsights"
                                 v-bind:viewall-url="activeSlideContent.relatedInsights.viewallUrl"
@@ -1652,309 +1510,170 @@
                                         </div>
                                     </div>
                                 </section>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
                     <footer class="site-footer">
-                        <div class="prominent-services">
-                            <ul class="prominent-services__list wrapper wrapper--wide">
-                                <li class="prominent-services__option">
-                                    <a
-                                        class="prominent-services__link"
-                                        href="../services/practices/intellectual-property.html"
-                                        >Intellectual Property</a
-                                    >
-                                </li>
-                                <li class="prominent-services__option">
-                                    <a
-                                        class="prominent-services__link"
-                                        href="../services/practices/litigation.html"
-                                        >Litigation</a
-                                    >
-                                </li>
-                                <li class="prominent-services__option">
-                                    <a
-                                        class="prominent-services__link"
-                                        href="../services/practices/restructuring.html"
-                                        >Restructuring</a
-                                    >
-                                </li>
-                                <li class="prominent-services__option">
-                                    <a
-                                        class="prominent-services__link"
-                                        href="../services/practices/transactional.html"
-                                        >Transactional</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
                         <div class="site-footer__main wrapper wrapper--wide">
                             <a
-                                class="site-footer__logo"
                                 href="../index.html"
-                                title="Kirkland & Ellis LLP Home"
+                                title="Kirkland &amp; Ellis LLP Home"
+                                class="site-footer__logo"
                                 ><img
                                     src="../assets/public/images/logo-white.svg"
-                                    alt="Kirkland & Ellis LLP"
+                                    alt="Kirkland &amp; Ellis LLP"
                             /></a>
-
                             <div class="site-footer__locations">
                                 <nav class="site-footer__regions">
-                                    <span class="site-footer__regions-label">Asia</span>
+                                    <span class="site-footer__regions-label">Head Office</span>
                                     <ul class="site-footer__locations-list">
                                         <li class="site-footer__locations-item">
                                             <a
-                                                class="site-footer__locations-city"
                                                 href="../offices/beijing.html"
-                                                >Beijing</a
+                                                class="site-footer__locations-city"
+                                                >S-456</a
                                             >
                                         </li>
                                         <li class="site-footer__locations-item">
                                             <a
-                                                class="site-footer__locations-city"
                                                 href="../offices/hong-kong.html"
-                                                >Hong Kong</a
+                                                class="site-footer__locations-city"
+                                                >Basement</a
                                             >
                                         </li>
                                         <li class="site-footer__locations-item">
                                             <a
-                                                class="site-footer__locations-city"
                                                 href="../offices/shanghai.html"
-                                                >Shanghai</a
+                                                class="site-footer__locations-city"
+                                                >Greater Kailash</a
+                                            >
+                                        </li>
+                                        <li class="site-footer__locations-item">
+                                            <a
+                                                href="../offices/shanghai.html"
+                                                class="site-footer__locations-city"
+                                                >Part-II</a
+                                            >
+                                        </li>
+                                        <li class="site-footer__locations-item">
+                                            <a
+                                                href="../offices/shanghai.html"
+                                                class="site-footer__locations-city"
+                                                >New Delhi-110048</a
                                             >
                                         </li>
                                     </ul>
                                 </nav>
                                 <nav class="site-footer__regions">
-                                    <span class="site-footer__regions-label">Europe</span>
+                                    <span class="site-footer__regions-label">India</span>
                                     <ul class="site-footer__locations-list">
                                         <li class="site-footer__locations-item">
                                             <a
-                                                class="site-footer__locations-city"
                                                 href="../offices/brussels.html"
-                                                >Brussels</a
+                                                class="site-footer__locations-city"
+                                                >Gurugram</a
                                             >
                                         </li>
                                         <li class="site-footer__locations-item">
                                             <a
-                                                class="site-footer__locations-city"
                                                 href="../offices/london.html"
-                                                >London</a
+                                                class="site-footer__locations-city"
+                                                >Kolkata</a
                                             >
                                         </li>
                                         <li class="site-footer__locations-item">
                                             <a
-                                                class="site-footer__locations-city"
                                                 href="../offices/munich.html"
-                                                >Munich</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
                                                 class="site-footer__locations-city"
-                                                href="../offices/paris.html"
-                                                >Paris</a
+                                                >Mumbai</a
                                             >
                                         </li>
                                     </ul>
                                 </nav>
                                 <nav class="site-footer__regions">
-                                    <span class="site-footer__regions-label">U.S.</span>
+                                    <span class="site-footer__regions-label">Italy</span>
                                     <ul class="site-footer__locations-list">
                                         <li class="site-footer__locations-item">
                                             <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/austin.html"
-                                                >Austin</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/san-francisco.html"
-                                                >Bay Area</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/boston.html"
-                                                >Boston</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/chicago.html"
-                                                >Chicago</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/dallas.html"
-                                                >Dallas</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/houston.html"
-                                                >Houston</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/los-angeles.html"
-                                                >Los Angeles</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/miami.html"
-                                                >Miami</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/new-york.html"
-                                                >New York</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
-                                                href="../offices/salt-lake-city.html"
-                                                >Salt Lake City</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__locations-item">
-                                            <a
-                                                class="site-footer__locations-city"
                                                 href="../offices/washington-dc.html"
-                                                >Washington, D.C.</a
+                                                class="site-footer__locations-city"
+                                                >In collaboration with Studio Legale Ovoli Frugoni
+                                                Associazion Professional at 00916 Roma, V. Ie
+                                                Pinturicchio, 204, Italy</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <nav class="site-footer__regions">
+                                    <span class="site-footer__regions-label">Nigeria</span>
+                                    <ul class="site-footer__locations-list">
+                                        <li class="site-footer__locations-item">
+                                            <a
+                                                href="../offices/washington-dc.html"
+                                                class="site-footer__locations-city"
+                                                >In collaboration with Simmons Cooper Partners at
+                                                9th Floor, Fortune Towers, 27/29 Adeyemo Alekija,
+                                                Victoria Island, Lagos, Nigeria</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <nav class="site-footer__regions">
+                                    <span class="site-footer__regions-label">Indonesia</span>
+                                    <ul class="site-footer__locations-list">
+                                        <li class="site-footer__locations-item">
+                                            <a
+                                                href="../offices/washington-dc.html"
+                                                class="site-footer__locations-city"
+                                                >In collaboration with Schinder Law Firm at Noble
+                                                House 27th Floor JI DR. Ide Anak Agung Gde Agung
+                                                Kav. E. 4-2 No. 2. Mega Kuningan. South Jakart -
+                                                12950</a
                                             >
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
-
-                            <div class="site-footer__closing">
+                            <div class="site-footer__closing" style="margin-bottom: 140px;">
                                 <ul class="social-links print-view-hide">
                                     <li class="social-links__item">
                                         <a
                                             title="Twitter"
-                                            class="social-links__icon icon-twitter"
                                             href="https://twitter.com/Kirkland_Ellis"
                                             target="_blank"
                                             rel="nofollow"
+                                            class="social-links__icon icon-twitter"
                                         ></a>
                                     </li>
-
                                     <li class="social-links__item">
                                         <a
                                             title="LinkedIn"
-                                            class="social-links__icon icon-linkedin"
                                             href="https://www.linkedin.com/company/kirkland-&amp;-ellis-llp"
                                             target="_blank"
                                             rel="nofollow"
+                                            class="social-links__icon icon-linkedin"
                                         ></a>
                                     </li>
-
                                     <li class="social-links__item">
                                         <a
                                             title="YouTube"
-                                            class="social-links__icon icon-youtube"
                                             href="https://www.youtube.com/@Kirkland_Ellis"
                                             target="_blank"
                                             rel="nofollow"
+                                            class="social-links__icon icon-youtube"
                                         ></a>
                                     </li>
-
                                     <li class="social-links__item">
                                         <a
                                             title="Instagram"
-                                            class="social-links__icon icon-instagram"
                                             href="https://www.instagram.com/lifeatkirkland"
                                             target="_blank"
                                             rel="nofollow"
+                                            class="social-links__icon icon-instagram"
                                         ></a>
                                     </li>
                                 </ul>
-
-                                <span class="site-footer__menu-label"
-                                    ><i class="icon-globe"></i>Language Resources</span
-                                >
-                                <ul class="site-footer__menu">
-                                    <li class="site-footer__menu-item">
-                                        <a
-                                            class="site-footer__menu-link"
-                                            href="../languageindex6fcb.html?language=zh-Hans"
-                                            >中文(简体)</a
-                                        >
-                                    </li>
-                                    <li class="site-footer__menu-item">
-                                        <a
-                                            class="site-footer__menu-link"
-                                            href="../languageindex8888.html?language=fr"
-                                            >Fran&#231;ais</a
-                                        >
-                                    </li>
-                                    <li class="site-footer__menu-item">
-                                        <a
-                                            class="site-footer__menu-link"
-                                            href="../languageindex5a22.html?language=de"
-                                            >Deutsch</a
-                                        >
-                                    </li>
-                                    <li class="site-footer__menu-item">
-                                        <a
-                                            class="site-footer__menu-link"
-                                            href="../languageindex9d3b.html?language=es"
-                                            >Espa&#241;ol</a
-                                        >
-                                    </li>
-                                </ul>
-
-                                <div class="site-footer__closing-options">
-                                    <ul class="site-footer__legal">
-                                        <li class="site-footer__legal-item">
-                                            <a
-                                                class="site-footer__legal-link"
-                                                href="../offices.html"
-                                                >Locations</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__legal-item">
-                                            <a
-                                                class="site-footer__legal-link"
-                                                href="../content/about-kirkland.html"
-                                                >About Kirkland</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__legal-item">
-                                            <a
-                                                class="site-footer__legal-link"
-                                                href="../content/attorney-advertising-disclaimer.html"
-                                                >Attorney Advertising</a
-                                            >
-                                        </li>
-                                        <li class="site-footer__legal-item">
-                                            <a
-                                                class="site-footer__legal-link"
-                                                href="../privacy-and-disclaimers.html"
-                                                >Privacy &amp; Disclaimers</a
-                                            >
-                                        </li>
-                                    </ul>
-                                    <span class="site-footer__copyright"
-                                        >&#169; 2023 Kirkland &amp; Ellis LLP</span
-                                    >
-                                </div>
                             </div>
                         </div>
                     </footer>
