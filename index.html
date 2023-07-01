@@ -1018,56 +1018,6 @@
                                     </p>
                                 </a>
                             </script>
-
-                            <div
-                                is="showcase-quote"
-                                v-if="activeSlideContent.showcaseQuote"
-                                :quote-data="activeSlideContent.showcaseQuote"
-                                inline-template
-                            >
-                                <div>
-                                    <blockquote
-                                        class="showcase-quote wrapper showcase-quote--desktop"
-                                    >
-                                        <div class="showcase-quote__body">
-                                            <cite class="showcase-quote__cite">
-                                                <span
-                                                    class="showcase-quote__author"
-                                                    v-text="quoteData.author"
-                                                ></span>
-                                                <span
-                                                    class="showcase-quote__position"
-                                                    v-text="quoteData.position"
-                                                ></span>
-                                            </cite>
-                                            <div
-                                                class="showcase-quote__blockquote"
-                                                v-html="quoteData.quote"
-                                            ></div>
-                                        </div>
-                                    </blockquote>
-                                    <div class="showcase-quote--mobile">
-                                        <div class="showcase-quote showcase-quote--dark wrapper">
-                                            <div class="showcase-quote__body">
-                                                <div
-                                                    class="showcase-quote__blockquote"
-                                                    v-html="quoteData.quote"
-                                                ></div>
-                                                <cite class="showcase-quote__cite">
-                                                    <span
-                                                        class="showcase-quote__author"
-                                                        v-text="quoteData.author"
-                                                    ></span>
-                                                    <span
-                                                        class="showcase-quote__position"
-                                                        v-text="quoteData.position"
-                                                    ></span>
-                                                </cite>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="section--alternating-bg">
@@ -1586,77 +1536,6 @@
                                         ></div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div
-                                is="showcase-insights"
-                                v-if="activeSlideContent.relatedInsights"
-                                v-bind:viewall-url="activeSlideContent.relatedInsights.viewallUrl"
-                                v-bind:insight-cards="activeSlideContent.relatedInsights.insightCards"
-                                inline-template
-                            >
-                                <section class="showcase-insights section">
-                                    <div class="wrapper section__multi-column">
-                                        <header class="titles__subheading section__column">
-                                            <h2 class="titles__subheading-title">Related</h2>
-                                        </header>
-
-                                        <div class="section__column-body">
-                                            <ul
-                                                class="showcase-insights__grid"
-                                                v-if="insightCards.length >= 3"
-                                            >
-                                                <li
-                                                    class="showcase-insights__grid-item showcase-insights__grid-item--1"
-                                                >
-                                                    <insight-card-result
-                                                        v-bind:insight="insightCards[1]"
-                                                    ></insight-card-result>
-                                                </li>
-
-                                                <li
-                                                    class="showcase-insights__grid-item showcase-insights__grid-item--prominent showcase-insights__grid-item--2"
-                                                >
-                                                    <prominent-card-result
-                                                        v-bind:insight="insightCards[0]"
-                                                    ></prominent-card-result>
-                                                </li>
-
-                                                <li
-                                                    v-for="(insight, index) in insightCards.slice(2)"
-                                                    class="showcase-insights__grid-item"
-                                                    v-bind:class="'showcase-insights__grid-item--' + (index+3)"
-                                                    v-if="shouldShow(index + 2)"
-                                                >
-                                                    <insight-card-result
-                                                        v-bind:insight="insight"
-                                                        v-bind:key="'insightKey-' + index"
-                                                    ></insight-card-result>
-                                                </li>
-                                            </ul>
-
-                                            <ul class="showcase-insights__grid" v-else>
-                                                <li
-                                                    v-for="(insight, index) in insightCards"
-                                                    class="showcase-insights__grid-item"
-                                                >
-                                                    <insight-card-result
-                                                        v-bind:insight="insight"
-                                                        v-bind:key="'insightKey-' + index"
-                                                    ></insight-card-result>
-                                                </li>
-                                            </ul>
-
-                                            <a
-                                                v-if="hasMore"
-                                                class="showcase-insights__more button button-primary"
-                                                v-on:click="showMore"
-                                            >
-                                                <span class="button-primary__label">See More</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </section>
                             </div>
                         </div>
                     </div>
@@ -2355,7 +2234,7 @@
                                 "/sapphirelawfirm/marquee-stories/about-us.html",
                             title: "About us",
                             category: "",
-                            date: "06 April 2023",
+                            date: "",
                             bgurl: "assets/public/images/slide-1.jpg",
                             bgurlMobile: "assets/public/images/slide-1-mobile.jpg",
                             watchVideoLabel: "Watch Video",
@@ -2480,7 +2359,7 @@
                             detailUrl: "/sapphirelawfirm/marquee-stories/services-make-it-as-bullet-points.html",
                             title: "Services Make it as Mullet Points",
                             category: "",
-                            date: "17 February 2023",
+                            date: "",
                             bgurl: "assets/public/images/slide-2.jpg",
                             bgurlMobile: "assets/public/images/slide-2-mobile.jpg",
                             watchVideoLabel: "Watch Video",
@@ -2583,7 +2462,7 @@
                                 "/sapphirelawfirm/marquee-stories/social-commitment.html",
                             title: "Social Commitment",
                             category: "",
-                            date: "19 September 2022",
+                            date: "",
                             bgurl: "assets/public/images/slide-1.jpg",
                             bgurlMobile: "assets/public/images/slide-1-mobile.jpg",
                             watchVideoLabel: "Watch Video",
